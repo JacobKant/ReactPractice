@@ -4,14 +4,15 @@ import Title from './components/title';
 import Toolbar from './components/toolbar';
 import TodoAddItemForm from './components/todo-add-form';
 import './App.css';
+import { FILTER } from './constants';
 
 class App extends React.Component {
   state = {
+    searchQuery: '',
+    filter: FILTER.ALL,
     items: [
       { id: 1, name: 'Сделать что то 1', done: false, important: false },
-      { id: 2, name: 'Сделать что то 2', done: true, important: false },
-      { id: 3, name: 'Сделать что то 3', done: false, important: false },
-      { id: 4, name: 'Сделать что то 4', done: false, important: false }
+      { id: 2, name: 'Сделать что то 2', done: true, important: false }
     ]
   };
 
@@ -23,7 +24,7 @@ class App extends React.Component {
     });
   };
 
-  onClickAddItem = (label) => {
+  onClickAddItem = label => {
     this.setState(state => {
       return {
         items: [
@@ -64,15 +65,58 @@ class App extends React.Component {
     });
   };
 
+  onChangeFilter = newFilter => {
+    this.setState({
+      filter: newFilter
+    });
+  };
+
+  onChangeSearch = query => {
+    this.setState({
+      searchQuery: query
+    });
+  };
+
+  search(items, query) {
+    if (query === '') return items;
+    return items.filter(
+      it => it.name.toLowerCase().indexOf(query.toLowerCase()) > -1
+    );
+  }
+
+  filter(items, filter) {
+    let filteredItems;
+    switch (filter) {
+      case FILTER.ACTIVE:
+        filteredItems = items.filter(it => !it.done);
+        break;
+      case FILTER.DONE:
+        filteredItems = items.filter(it => it.done);
+        break;
+      default:
+        filteredItems = items;
+    }
+    return filteredItems;
+  }
+
   render() {
     const doneCount = this.state.items.filter(it => it.done).length;
     const todoCount = this.state.items.length - doneCount;
+
+    const { items, filter, searchQuery } = this.state;
+    const visibleItems = this.search(this.filter(items, filter), searchQuery);
+
     return (
       <div className="page">
         <Title doneCount={doneCount} todoCount={todoCount} />
-        <Toolbar />
+        <Toolbar
+          currentFilter={filter}
+          searchQuery={searchQuery}
+          onChangeFilter={this.onChangeFilter}
+          onChangeSearch={this.onChangeSearch}
+        />
         <TodoList
-          items={this.state.items}
+          items={visibleItems}
           onDeleted={this.onClickDeleteItem}
           onToggleDone={this.onToggleDone}
           onToggleImportant={this.onToggleImportant}

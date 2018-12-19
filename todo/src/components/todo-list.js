@@ -5,14 +5,13 @@ const TodoList = ({ items, onDeleted, onToggleImportant, onToggleDone }) => {
   return (
     <div>
       {items.map(item => (
-        <div style={{ margin: '10px' }} key={item.id}>
-          <TodoItem
-            item={item}
-            onDeleted={() => onDeleted(item.id)}
-            onToggleDone={() => onToggleDone(item.id)}
-            onToggleImportant={() => onToggleImportant(item.id)}
-          />
-        </div>
+        <TodoItem
+          key={item.id}
+          item={item}
+          onDeleted={() => onDeleted(item.id)}
+          onToggleDone={() => onToggleDone(item.id)}
+          onToggleImportant={() => onToggleImportant(item.id)}
+        />
       ))}
     </div>
   );

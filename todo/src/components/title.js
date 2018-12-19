@@ -1,11 +1,11 @@
 import React from 'react';
-
+import './title.css';
 const Title = ({ doneCount, todoCount }) => {
   return (
-    <div>
+    <div className="title-container">
+      <h1>Todo List</h1>
       <span>
-        <h1>Todo List</h1>
-        <span>{todoCount} more to do, {doneCount} done</span>
+        {todoCount} more to do, {doneCount} done
       </span>
     </div>
   );

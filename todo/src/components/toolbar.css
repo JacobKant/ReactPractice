@@ -1,0 +1,15 @@
+.toolbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+}
+
+.toolbar-container input {
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin-right: 8px;
+}

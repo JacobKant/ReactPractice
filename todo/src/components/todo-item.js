@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './todo-item.css';
 class TodoItem extends React.Component {
   render() {
     const { item, onDeleted, onToggleImportant, onToggleDone } = this.props;
@@ -11,17 +11,19 @@ class TodoItem extends React.Component {
     let classes = '';
     if (this.props.item.important) classes += ' important';
     return (
-      <span>
+      <div className="item">
         <span style={style} className={classes} onClick={onToggleDone}>
           {item.name}
         </span>
-        <button className="btn btn-primary" onClick={onDeleted}>
-          Delete
-        </button>
-        <button className="btn btn-primary" onClick={onToggleImportant}>
-          Important
-        </button>
-      </span>
+        <div>
+          <button className="btn btn-primary" onClick={onDeleted}>
+            Delete
+          </button>
+          <button className="btn btn-primary" onClick={onToggleImportant}>
+            Important
+          </button>
+        </div>
+      </div>
     );
   }
 }
