@@ -2,7 +2,7 @@
   "name": "todo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jacobkant.github.io/ReactPractice",
+  "homepage": "https://jacobkant.github.io/ReactPractice/todo/build",
   "dependencies": {
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
@@ -12,9 +12,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

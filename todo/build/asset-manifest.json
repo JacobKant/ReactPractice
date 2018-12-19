@@ -1,13 +1,13 @@
 {
-  "main.css": "/ReactPractice/static/css/main.83fc34eb.chunk.css",
-  "main.js": "/ReactPractice/static/js/main.d81eadff.chunk.js",
-  "main.js.map": "/ReactPractice/static/js/main.d81eadff.chunk.js.map",
-  "static/js/1.f4926859.chunk.js": "/ReactPractice/static/js/1.f4926859.chunk.js",
-  "static/js/1.f4926859.chunk.js.map": "/ReactPractice/static/js/1.f4926859.chunk.js.map",
-  "runtime~main.js": "/ReactPractice/static/js/runtime~main.8fd4b735.js",
-  "runtime~main.js.map": "/ReactPractice/static/js/runtime~main.8fd4b735.js.map",
-  "static/css/main.83fc34eb.chunk.css.map": "/ReactPractice/static/css/main.83fc34eb.chunk.css.map",
-  "index.html": "/ReactPractice/index.html",
-  "precache-manifest.188987e269356964cb8e732e47f47d90.js": "/ReactPractice/precache-manifest.188987e269356964cb8e732e47f47d90.js",
-  "service-worker.js": "/ReactPractice/service-worker.js"
+  "main.css": "/ReactPractice/todo/build/static/css/main.83fc34eb.chunk.css",
+  "main.js": "/ReactPractice/todo/build/static/js/main.d81eadff.chunk.js",
+  "main.js.map": "/ReactPractice/todo/build/static/js/main.d81eadff.chunk.js.map",
+  "static/js/1.f4926859.chunk.js": "/ReactPractice/todo/build/static/js/1.f4926859.chunk.js",
+  "static/js/1.f4926859.chunk.js.map": "/ReactPractice/todo/build/static/js/1.f4926859.chunk.js.map",
+  "runtime~main.js": "/ReactPractice/todo/build/static/js/runtime~main.adeddb93.js",
+  "runtime~main.js.map": "/ReactPractice/todo/build/static/js/runtime~main.adeddb93.js.map",
+  "static/css/main.83fc34eb.chunk.css.map": "/ReactPractice/todo/build/static/css/main.83fc34eb.chunk.css.map",
+  "index.html": "/ReactPractice/todo/build/index.html",
+  "precache-manifest.80d82f8fac5c96f57bc294811a9988be.js": "/ReactPractice/todo/build/precache-manifest.80d82f8fac5c96f57bc294811a9988be.js",
+  "service-worker.js": "/ReactPractice/todo/build/service-worker.js"
 }
