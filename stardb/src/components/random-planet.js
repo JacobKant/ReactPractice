@@ -8,26 +8,44 @@ export default class RandomPlanet extends React.Component {
 
   state = {
     planet: {},
-    loading: true
+    loading: true,
+    error: false
   };
 
-  constructor() {
-    super();
+  componentDidMount() {
     this.updatePlanet();
+    this.interval = setInterval(this.updatePlanet, 5000);
+  }
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
-  updatePlanet() {
-    const id = Math.floor(Math.random() * 25) + 2;
-    this.setState({ loading: true });
-    this.swapiService.getPlanet(id).then(it => {
-      this.setState({ planet: it, loading: false });
-    });
+  updatePlanet = () => {
+    const id = Math.floor(Math.random() * 20) + 3;
+    this.swapiService
+      .getPlanet(id)
+      .then(it => {
+        this.setState({ planet: it, loading: false });
+      })
+      .catch(err => {
+        this.setState({ loading: false, error: true });
+      });
   }
 
   render() {
-    const { planet, loading } = this.state;
-    const view = loading ? <Spinner /> : <PlanetView planet={planet} />;
-    return <div className="flex-box">{view}</div>;
+    const { planet, loading, error } = this.state;
+    const spinnerView = loading ? <Spinner /> : null;
+    const errorView = error ? <p>Error</p> : null;
+    const planetView =
+      !loading && !error ? <PlanetView planet={planet} /> : null;
+
+    return (
+      <div className="flex-box">
+        {spinnerView}
+        {errorView}
+        {planetView}
+      </div>
+    );
   }
 }
 
