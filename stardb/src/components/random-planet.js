@@ -14,7 +14,7 @@ export default class RandomPlanet extends React.Component {
 
   componentDidMount() {
     this.updatePlanet();
-    this.interval = setInterval(this.updatePlanet, 5000);
+    this.interval = setInterval(this.updatePlanet, 20000);
   }
   componentWillUnmount() {
     clearInterval(this.interval);
@@ -40,7 +40,7 @@ export default class RandomPlanet extends React.Component {
       !loading && !error ? <PlanetView planet={planet} /> : null;
 
     return (
-      <div className="flex-box">
+      <div className="flex-box card">
         {spinnerView}
         {errorView}
         {planetView}
@@ -50,8 +50,8 @@ export default class RandomPlanet extends React.Component {
 }
 
 const PlanetView = props => {
-  const { id, name, population, rotationPeriod, diameter } = props.planet;
-  const imgUrl = `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`;
+  const { id, name, population, rotationPeriod, diameter, imgUrl } = props.planet;
+
   return (
     <React.Fragment>
       <img src={imgUrl} alt="planet" />

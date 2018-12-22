@@ -9,47 +9,77 @@ export default class SwapiService {
     return await res.json();
   }
 
-  async getPeople(id) {
-    return await this.getResource(`people/${id}/`);
-  }
-
-  async getAllPeople() {
+  getAllPeople = async () => {
     const res = await this.getResource('people/');
-    return res.results;
-  }
+    return res.results.map(this._transformPeople);
+  };
 
-  async getAllPlanets() {
+  getPeople = async id => {
+    const people = await this.getResource(`people/${id}/`);
+    return this._transformPeople(people);
+  };
+
+  _transformPeople = it => {
+    const id = this._extractId(it);
+    const imgUrl = `https://starwars-visualguide.com/assets/img/characters/${id}.jpg`;
+
+    return {
+      id: id,
+      height: it.height,
+      mass: it.mass,
+      name: it.name,
+      birthYear: it.birth_year,
+      imgUrl: imgUrl
+    };
+  };
+
+  getAllPlanets = async () => {
     const res = await this.getResource('planets/');
     return res.results.map(this._transformPlanet);
-  }
+  };
 
-  async getPlanet(id) {
-    const planet =  await this.getResource(`planets/${id}/`);
+  getPlanet = async id => {
+    const planet = await this.getResource(`planets/${id}/`);
     return this._transformPlanet(planet);
-  }
+  };
 
-  _extractId(it) {
+  _extractId = it => {
     const idRegExp = /\/([0-9]*)\/$/;
     const id = it.url.match(idRegExp)[1];
     return id;
-  }
+  };
 
-  _transformPlanet(it) {
+  _transformPlanet = it => {
+    const id = this._extractId(it);
+    const imgUrl = `https://starwars-visualguide.com/assets/img/planets/${id}.jpg`;
     return {
       id: this._extractId(it),
       name: it.name,
       population: it.population,
       rotationPeriod: it.rotation_period,
-      diameter: it.diameter
+      diameter: it.diameter,
+      imgUrl: imgUrl
     };
-  }
+  };
 
-  async getAllStarships() {
+  getAllStarships = async () => {
     const res = await this.getResource('starships/');
     return res.results;
-  }
+  };
 
-  async getStarship(id) {
+  getStarship = async id => {
     return await this.getResource(`starships/${id}/`);
-  }
+  };
+
+  _transformSrarship = it => {
+    const id = this._extractId(it);
+    const imgUrl = `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`;
+    return {
+      id: id,
+      name: it.name,
+      model: it.model,
+      maxSpeed: it.max_atmosphering_speed,
+      imgUrl: imgUrl
+    };
+  };
 }

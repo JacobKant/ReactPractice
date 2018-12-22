@@ -1,0 +1,12 @@
+.list-item {
+  min-height: 32px;
+  align-items: center;
+  display:flex;
+  justify-content: left;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.list-item:hover {
+  background-color: #aaaaaa;
+}
