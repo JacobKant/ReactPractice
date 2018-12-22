@@ -1,11 +1,12 @@
 import React from 'react';
-import SwapiService from '../services/swapi-service';
 import Spinner from './spinner';
 
 const Record = ({ item, field, label }) => {
   return (
     <li>
-      <span>{label} : {item[field]}</span>
+      <span>
+        {label} : {item[field]}
+      </span>
     </li>
   );
 };
@@ -16,14 +17,11 @@ class Detail extends React.Component {
     item: {},
     loading: false
   };
-  swapiService = new SwapiService();
 
   loadItem() {
-    const { selectedItemId, getData } = this.props;
+    const { itemId, getData } = this.props;
     this.setState({ loading: true });
-    getData(selectedItemId).then(it =>
-      this.setState({ item: it, loading: false })
-    );
+    getData(itemId).then(it => this.setState({ item: it, loading: false }));
   }
 
   componentDidMount() {
@@ -31,7 +29,7 @@ class Detail extends React.Component {
   }
 
   componentDidUpdate(prevProp, prevState) {
-    if (prevProp.selectedItemId !== this.props.selectedItemId) {
+    if (prevProp.itemId !== this.props.itemId) {
       this.loadItem();
     }
   }
@@ -50,7 +48,6 @@ class Detail extends React.Component {
     if (!this.state.item.name) {
       return null;
     }
-
     return (
       <div>
         <img src={imgUrl} alt="people" />

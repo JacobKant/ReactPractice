@@ -64,14 +64,15 @@ export default class SwapiService {
 
   getAllStarships = async () => {
     const res = await this.getResource('starships/');
-    return res.results;
+    return res.results.map(this._transformStarship);
   };
 
   getStarship = async id => {
-    return await this.getResource(`starships/${id}/`);
+    const res = await this.getResource(`starships/${id}/`);
+    return this._transformStarship(res);
   };
 
-  _transformSrarship = it => {
+  _transformStarship = it => {
     const id = this._extractId(it);
     const imgUrl = `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`;
     return {
