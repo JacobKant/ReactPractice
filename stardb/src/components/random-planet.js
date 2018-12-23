@@ -60,14 +60,7 @@ export default class RandomPlanet extends React.Component {
 }
 
 const PlanetView = props => {
-  const {
-    id,
-    name,
-    population,
-    rotationPeriod,
-    diameter,
-    imgUrl
-  } = props.planet;
+  const { name, population, rotationPeriod, diameter, imgUrl } = props.planet;
 
   return (
     <React.Fragment>

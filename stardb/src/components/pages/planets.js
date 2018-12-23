@@ -2,28 +2,18 @@ import React from 'react';
 import { PlanetList, PlanetDetail } from '../sw-components';
 import { ErrorBoundry } from '../error-boundry';
 import ListDetailRow from '../list-detail-row';
+import { withRouter } from 'react-router-dom';
 
-export default class PlanetPage extends React.Component {
-  state = {
-    itemId: null
-  };
+const PlanetPage = ({ match, history }) => {
+  const { id } = match.params;
+  const left = <PlanetList onClickItem={id => history.push(id)} />;
+  const right = id != null ? <PlanetDetail itemId={id} /> : <p>Select item</p>;
 
-  onClickItem = id => {
-    this.setState({ itemId: id });
-  };
+  return (
+    <ErrorBoundry>
+      <ListDetailRow left={left} right={right} />
+    </ErrorBoundry>
+  );
+};
 
-  render() {
-    const left = <PlanetList onClickItem={this.onClickItem} />;
-    const right =
-      this.state.itemId != null ? (
-        <PlanetDetail itemId={this.state.itemId} />
-      ) : (
-        <p>Select item</p>
-      );
-    return (
-      <ErrorBoundry>
-        <ListDetailRow left={left} right={right} />
-      </ErrorBoundry>
-    );
-  }
-}
+export default withRouter(PlanetPage);

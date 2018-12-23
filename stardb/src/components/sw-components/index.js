@@ -1,4 +1,3 @@
-import React from 'react';
 import PlanetList from './planet-list';
 import PeopleList from './people-list';
 import StarshipList from './starship-list';

@@ -2,11 +2,12 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin: 16px;
-  background-color: hsla(0, 0%, 100%, 0.1);
+  background-color: hsla(170, 40%, 80%, 0.20);
   border-radius: 10px;
   min-height: 92px;
   align-items: center;
+  margin-bottom: 16px;
+  margin: 10px;
 }
 
 header > * {
