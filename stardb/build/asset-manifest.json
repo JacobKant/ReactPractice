@@ -1,13 +1,14 @@
 {
-  "main.css": "/ReactPractice/stardb/build/static/css/main.497e4d7f.chunk.css",
-  "main.js": "/ReactPractice/stardb/build/static/js/main.c3bfad49.chunk.js",
-  "main.js.map": "/ReactPractice/stardb/build/static/js/main.c3bfad49.chunk.js.map",
+  "main.css": "/ReactPractice/stardb/build/static/css/main.ddb1063c.chunk.css",
+  "main.js": "/ReactPractice/stardb/build/static/js/main.9d85e38e.chunk.js",
+  "main.js.map": "/ReactPractice/stardb/build/static/js/main.9d85e38e.chunk.js.map",
   "static/js/1.0572aae0.chunk.js": "/ReactPractice/stardb/build/static/js/1.0572aae0.chunk.js",
   "static/js/1.0572aae0.chunk.js.map": "/ReactPractice/stardb/build/static/js/1.0572aae0.chunk.js.map",
   "runtime~main.js": "/ReactPractice/stardb/build/static/js/runtime~main.8a03660e.js",
   "runtime~main.js.map": "/ReactPractice/stardb/build/static/js/runtime~main.8a03660e.js.map",
-  "static/css/main.497e4d7f.chunk.css.map": "/ReactPractice/stardb/build/static/css/main.497e4d7f.chunk.css.map",
+  "static/media/app.css": "/ReactPractice/stardb/build/static/media/stars.06788c27.jpg",
+  "static/css/main.ddb1063c.chunk.css.map": "/ReactPractice/stardb/build/static/css/main.ddb1063c.chunk.css.map",
   "index.html": "/ReactPractice/stardb/build/index.html",
-  "precache-manifest.bd76f678c38fbdaba4fed473763bc456.js": "/ReactPractice/stardb/build/precache-manifest.bd76f678c38fbdaba4fed473763bc456.js",
+  "precache-manifest.177e15b21672fd4c7541785f5f30e153.js": "/ReactPractice/stardb/build/precache-manifest.177e15b21672fd4c7541785f5f30e153.js",
   "service-worker.js": "/ReactPractice/stardb/build/service-worker.js"
 }
