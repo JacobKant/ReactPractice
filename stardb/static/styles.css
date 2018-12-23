@@ -6,7 +6,7 @@ body {
   /* background-color: black; */
   max-width: 900px;
   margin: 0 auto;
-  background-image: url(/stars.jpg);
+  background-image: url(static/stars.jpg);
   animation: animatedBackground 9999s linear infinite;
   -moz-animation: animatedBackground 9999s linear infinite;
   -webkit-animation: animatedBackground 9999s linear infinite;

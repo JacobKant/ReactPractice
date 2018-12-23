@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/ReactPractice/stardb/build/static/css/main.497e4d7f.chunk.css"
   },
   {
-    "revision": "71eb6082d8e209bc3c8c409ca9c6b500",
+    "revision": "3fb7dc893d1abf05c8c048212f086337",
     "url": "/ReactPractice/stardb/build/index.html"
   }
 ];
