@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ListDetailRow = ({ left, right }) => {
   return (
@@ -9,6 +10,11 @@ const ListDetailRow = ({ left, right }) => {
       </div>
     </div>
   );
+};
+
+ListDetailRow.propTypes = {
+  left: PropTypes.node,
+  right: PropTypes.node
 };
 
 export default ListDetailRow;
