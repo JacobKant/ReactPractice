@@ -32,4 +32,4 @@ const withData = View => {
   };
 };
 
-export { withData };
+export default withData;

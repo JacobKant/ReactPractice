@@ -1,46 +1,52 @@
 import React from 'react';
-import { withData } from '../hoc/with-data';
+import withData from '../hoc/with-data';
+import compose from '../hoc/compose';
 import List from '../items-list';
 import Detail, { Record } from '../item-detail';
 import { withSwapiService } from '../swapi-service-context';
 
-const withChildFunction = (Wrapped, fn) => {
+const withChildFunction = fn => Wrapped => {
   return props => {
     return <Wrapped {...props}>{fn}</Wrapped>;
   };
 };
 
-const PlanetList = withSwapiService(
-  withData(
-    withChildFunction(List, ({ name, diameter }) => `${name} (${diameter})`)
-  ),
-  swapiService => {
+const PlanetList = compose(
+  withSwapiService(swapiService => {
     return {
       getData: swapiService.getAllPlanets
     };
-  }
-);
-const PeopleList = withSwapiService(
-  withData(
-    withChildFunction(List, ({ name, birthYear }) => `${name} (${birthYear})`)
-  ),
-  swapiService => {
+  }),
+  withData,
+  withChildFunction(({ name, diameter }) => `${name} (${diameter})`)
+)(List);
+
+const PeopleList = compose(
+  withSwapiService(swapiService => {
     return {
       getData: swapiService.getAllPeople
     };
-  }
-);
-const StarshipList = withSwapiService(
-  withData(withChildFunction(List, ({ name, model }) => `${name} (${model})`)),
-  swapiService => {
+  }),
+  withData,
+  withChildFunction(({ name, birthYear }) => `${name} (${birthYear})`)
+)(List);
+
+const StarshipList = compose(
+  withSwapiService(swapiService => {
     return {
       getData: swapiService.getAllStarships
     };
-  }
-);
+  }),
+  withData,
+  withChildFunction(({ name, model }) => `${name} (${model})`)
+)(List);
 
-const PlanetDetail = withSwapiService(
-  props => {
+const PlanetDetail = compose(
+  withSwapiService(swapiService => {
+    return {
+      getData: swapiService.getPlanet
+    };
+  })(props => {
     return (
       <Detail {...props}>
         <Record field="population" label="Population" />
@@ -48,16 +54,15 @@ const PlanetDetail = withSwapiService(
         <Record field="diameter" label="Diameter" />
       </Detail>
     );
-  },
-  swapiService => {
-    return {
-      getData: swapiService.getPlanet
-    };
-  }
+  })
 );
 
-const PeopleDetail = withSwapiService(
-  props => {
+const PeopleDetail = compose(
+  withSwapiService(swapiService => {
+    return {
+      getData: swapiService.getPeople
+    };
+  })(props => {
     return (
       <Detail {...props}>
         <Record field="birthYear" label="Birth Year" />
@@ -65,29 +70,23 @@ const PeopleDetail = withSwapiService(
         <Record field="mass" label="Mass" />
       </Detail>
     );
-  },
-  swapiService => {
-    return {
-      getData: swapiService.getPeople
-    };
-  }
+  })
 );
 
-const StarshipDetail = withSwapiService(
-  props => {
-    return (
-      <Detail {...props}>
-        <Record field="model" label="Model" />
-        <Record field="maxSpeed" label="Max speed" />
-      </Detail>
-    );
-  },
-  swapiService => {
+const StarshipDetail = compose(
+  withSwapiService(swapiService => {
     return {
       getData: swapiService.getStarship
     };
-  }
-);
+  })
+)(props => {
+  return (
+    <Detail {...props}>
+      <Record field="model" label="Model" />
+      <Record field="maxSpeed" label="Max speed" />
+    </Detail>
+  );
+});
 
 export {
   PlanetList,

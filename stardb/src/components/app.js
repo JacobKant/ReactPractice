@@ -14,7 +14,7 @@ export default class App extends React.Component {
   };
 
   onServiceChange = () => {};
-  swapiService = new SwapiService();
+
   render() {
     return (
       <div>

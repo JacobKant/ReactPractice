@@ -5,7 +5,7 @@ const {
   Consumer: SwapiServiceConsumer
 } = React.createContext();
 
-const withSwapiService = (Wrapped, mapToProps) => {
+const withSwapiService = mapToProps => Wrapped => {
   return props => {
     return (
       <SwapiServiceConsumer>

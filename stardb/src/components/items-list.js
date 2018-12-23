@@ -2,6 +2,7 @@ import React from 'react';
 import './items-list.css';
 
 const List = ({ children, onClickItem, data }) => {
+  debugger;
   const items = data.map(it => {
     const label = children(it);
     return (
