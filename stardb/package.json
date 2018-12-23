@@ -2,6 +2,7 @@
   "name": "stardb",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jacobkant.github.io/ReactPractice/stardb/build",
   "dependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.7.0",

@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* background-color: black; */
+  max-width: 900px;
+  margin: 0 auto;
+  background-image: url(/stars.jpg);
+  animation: animatedBackground 9999s linear infinite;
+  -moz-animation: animatedBackground 9999s linear infinite;
+  -webkit-animation: animatedBackground 9999s linear infinite;
+  -ms-animation: animatedBackground 9999s linear infinite;
+  -o-animation: animatedBackground 9999s linear infinite;
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 99999px;
+  }
+}
+@-moz-keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 99999px;
+  }
+}
+@-webkit-keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 99999px;
+  }
+}
+@-ms-keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 99999px;
+  }
+}
+@-o-keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 99999px;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a:link {
+  color: #ffffff;
+}
+
+a:visited {
+  color: #aaaaaa;
+}
+
+a:active {
+  color: red;
+}
+
+a:hover {
+  color: #aa2222;
+}
+
+img {
+  border-radius: 4px;
+}
+
+.flex-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  align-items: center;
+  background-color: hsla(170, 40%, 80%, 0.2);
+  border-radius: 10px;
+  padding: 16px;
+  margin: 10px;
+}
+
+.flex-box > * {
+  flex: 1 0 auto;
+}
