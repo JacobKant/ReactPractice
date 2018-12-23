@@ -14,12 +14,14 @@ export default class StarshipPage extends React.Component {
 
   render() {
     const left = <StarshipList onClickItem={this.onClickItem} />;
+
     const right =
       this.state.itemId != null ? (
         <StarshipDetail itemId={this.state.itemId} />
       ) : (
         <p>Select item</p>
       );
+
     return (
       <ErrorBoundry>
         <ListDetailRow left={left} right={right} />
