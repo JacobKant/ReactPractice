@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/ReactPractice/stardb/build/static/js/runtime~main.8a03660e.js"
   },
   {
-    "revision": "9d85e38e77943b012cdf",
-    "url": "/ReactPractice/stardb/build/static/js/main.9d85e38e.chunk.js"
+    "revision": "8fb3999c73b932e01b45",
+    "url": "/ReactPractice/stardb/build/static/js/main.8fb3999c.chunk.js"
   },
   {
     "revision": "0572aae03b6f9854dd28",
     "url": "/ReactPractice/stardb/build/static/js/1.0572aae0.chunk.js"
   },
   {
-    "revision": "9d85e38e77943b012cdf",
-    "url": "/ReactPractice/stardb/build/static/css/main.ddb1063c.chunk.css"
+    "revision": "8fb3999c73b932e01b45",
+    "url": "/ReactPractice/stardb/build/static/css/main.7fad537e.chunk.css"
   },
   {
-    "revision": "2b3d76de4ba8fe70f2c7ab63ff50d8bd",
+    "revision": "5532de0e4a58b4edfc3dd0d7fdb23afb",
     "url": "/ReactPractice/stardb/build/index.html"
   }
 ];
