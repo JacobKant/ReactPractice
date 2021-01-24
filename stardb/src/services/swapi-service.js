@@ -1,5 +1,5 @@
 export default class SwapiService {
-  _baseUrl = 'https://swapi.co/api/';
+  _baseUrl = 'https://swapi.dev/api/';
 
   async getResource(resUrl) {
     const res = await fetch(`${this._baseUrl}${resUrl}`);
